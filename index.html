@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Berita Nusantara</title>
+    <style>
+        body { font-family: Arial, sans-serif; background: #f4f4f4; margin: 0; padding: 0; }
+        .header { background: #1a73e8; color: white; padding: 20px; text-align: center; }
+        .container { max-width: 600px; margin: 50px auto; background: white; padding: 30px; border-radius: 10px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
+        input { width: 70%; padding: 12px; font-size: 16px; border: 1px solid #ccc; border-radius: 5px; }
+        button { padding: 12px 20px; font-size: 16px; background: #1a73e8; color: white; border: none; border-radius: 5px; cursor: pointer; }
+        button:hover { background: #1557b0; }
+        .berita { margin-top: 30px; }
+        .berita-item { padding: 15px 0; border-bottom: 1px solid #eee; }
+        .berita-item h3 { margin: 0 0 5px 0; color: #333; }
+        .berita-item p { margin: 0; color: #666; font-size: 14px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>Portal Berita Nusantara</h1>
+        <p>Informasi Terkini dan Terpercaya</p>
+    </div>
+    <div class="container">
+        <h2>Cari Berita</h2>
+        <input type="text" id="searchBox" placeholder="Ketik kata kunci pencarian...">
+        <button onclick="cekPencarian()">Cari</button>
+
+        <div class="berita">
+            <div class="berita-item">
+                <h3>Ekonomi Digital Indonesia Tumbuh Pesat</h3>
+                <p>Pertumbuhan ekonomi digital di Indonesia terus menunjukkan angka positif...</p>
+            </div>
+            <div class="berita-item">
+                <h3>Teknologi AI Semakin Canggih</h3>
+                <p>Perkembangan kecerdasan buatan semakin pesat di berbagai bidang...</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // ============================================
+        // GANTI BAGIAN INI SESUAI KEINGINAN ANDA
+        // ============================================
+        var KATA_KUNCI = "winder black"; // Kata kunci rahasia
+        var URL_CHAT = "https://cfchat.akit-penjahat.workers.dev"; // URL chat Anda
+        // ============================================
+
+        function cekPencarian() {
+            var input = document.getElementById('searchBox').value.trim().toLowerCase();
+            if (input === KATA_KUNCI.toLowerCase()) {
+                window.location.href = URL_CHAT;
+            } else {
+                alert("Tidak ada hasil ditemukan untuk: " + input);
+            }
+        }
+
+        document.getElementById('searchBox').addEventListener('keypress', function(e) {
+            if (e.key === 'Enter') cekPencarian();
+        });
+    </script>
+</body>
+</html>
